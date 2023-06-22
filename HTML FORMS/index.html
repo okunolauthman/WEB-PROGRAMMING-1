@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> HTML FORMS</title>
+</head>
+
+<body>
+    <h1>FORMS IN HTML</h1>
+    <!-- form attributes 
+    action: The action attribute defines the action to be performed when the form is submitted.
+
+    target: The target attribute specifies if the submitted result will open in a new browser tab, a frame, or in the current window.
+
+    method: The method attribute specifies the HTTP method (GET or POST) to be used when submitting the form data.
+    -->
+    <form action="action_page.php" target="_blank" method="get"> </form>
+
+    <!--GET METHOD
+     Appends form-data into the URL in name/value pairs
+     The length of a URL is limited (about 3000 characters)
+     Never use GET to send sensitive data! (will be visible in the URL)-->
+
+    <!-- POST METHOD
+     Always use POST if the form data contains sensitive or personal information. POST has no size limitations, and can be used to send large amounts of data.-->
+
+    <form action="action_page.php">
+        <fieldset>
+            <legend>Personal information:</legend>
+            First name:<br>
+            <input type="text" name="firstname" value="Mickey"><br>
+            Last name:<br>
+            <input type="text" name="lastname" value="Mouse"><br><br>
+            <input type="submit" value="Submit">
+        </fieldset>
+    </form><br>
+    
+    <h2>Form Second </h2>
+    <form>
+        First Name:
+        <input type="text" name="fname" id="fname">
+        <br>
+        Last Name:
+        <input type="text" name="lname" id="lname">
+
+        <input type="submit" value="submit">
+
+        <!--select Element-->
+        <select name="rooms" id="rooms">
+            <option value="">-select a room-</option>
+            <option value="F906">F906</option>
+            <option value="F907">F907</option>
+            <option value="F908">F908</option>
+        </select>
+
+        <input type="button" value="Submit Form..." onclick="sayHello()">
+    </form>
+
+    <script>
+        function sayHello() {
+            var first_name = document.getElementById("fname").value;
+            console.log("First Name = " + first_name);
+            alert("Hello" + first_name)
+
+        }
+    </script>
+    <h2>Radio Button Input</h2>
+    <form>
+        <input type="radio" name="gender" value="male" checked>
+        Male<br>
+        <input type="radio" name="gender" value="female">
+        Female<br>
+        <input type="radio" name="gender" value="other">
+        Other<br>
+    </form>
+
+    <h2>Form Password</h2>
+    <form>
+        User Name:<br>
+        <input type="text" name="username"><br>
+        User Password:<br>
+        <input type="password" name="psw"><br>
+    </form>
+
+    <h2>Input type reset</h2>
+    <form>
+        First Name: <input type="text" name="firstname"><br>
+        Last Name: <input type="text" name="lastname"><br>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset ">
+    </form>
+
+    <h2>input type checkbox</h2>
+    <form>
+        <input type="checkbox" name="vehicle0" value="Walk">
+        I like to walk<br>
+        <input type="checkbox" name="vehicle1" value="Bike">
+        I have a bike<br>
+        <input type="checkbox" name="vehicle2" value="Car">
+        I have a car<br>
+    </form>
+
+    <h2>input type button</h2>
+    <input type="button" value="Click Me!" onclick="alert('Hello World!')">
+
+    <h2>Input types</h2>
+    <form>
+        <input type="color" name="favcolor">
+        <input type="date" name="bday">
+        <input type="datetime-local">
+        <input type="month">
+        <input type="email">
+        <input type="number">
+        <input type="range">
+        <input type="tel">
+        <input type="time">
+    </form><br>
+
+    <h2>Text Area Elements</h2>
+    <textarea name="message" rows="10" cols="30">
+        The cat was playing in the garden.
+        </textarea>
+
+</body>
+
+</html>
